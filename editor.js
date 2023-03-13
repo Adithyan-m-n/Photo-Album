@@ -130,6 +130,7 @@ function markRed(){
     }
     ctx.putImageData(imageData, 0, 0);
     img.src = canvas.toDataURL();
+    tintfunc();
 }
 
 function markGreen(){
@@ -144,6 +145,7 @@ function markGreen(){
     }
     ctx.putImageData(imageData, 0, 0);
     img.src = canvas.toDataURL();
+    tintfunc();
 }
 
 function markBlue(){
@@ -158,11 +160,24 @@ function markBlue(){
     }
     ctx.putImageData(imageData, 0, 0);
     img.src = canvas.toDataURL();
+    tintfunc();
 }
 
 
-function markReset(){
+function fullReset(){
   img.src = originalImgSrc; 
+}
+
+function markReset(){
+  img.onload = function() {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    applyFilters();
+    tintfunc();
+  };
+  img.src = image.src;
+
 }
 
 function tintImage(){
@@ -181,6 +196,7 @@ function tintImage(){
 
   ctx.putImageData(imageData, 0, 0);
   img.src = canvas.toDataURL();
+  tintfunc();
 }
 
 let hexToRgb = (hex) => {

@@ -1,72 +1,88 @@
 .row div {
-    padding: 10px;
+  padding: 10px;
 }
 
 body {
-    border: 20px double #FFA500;
-    padding: 10px;
-    border-color: #FFA500 #00CED1 #FFA500 #00CED1;
-    background-color: white;
+  border: 20px double #FFA500;
+  padding: 10px;
+  border-color: #FFA500 #00CED1 #FFA500 #00CED1;
+  background-color: white;
 }
 
 header{  font-family: Garamond, serif;
-        font-size: 50px;
-        background-color: rgba(69, 94, 236, 0.215);
-        color: rgb(6, 81, 56);
+      font-size: 50px;
+      background-color: rgba(69, 94, 236, 0.215);
+      color: rgb(6, 81, 56);
 }  
 
 .row img {
-    max-width: 100%;
-    height: auto;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-}
-  
-.row img.zoom {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(2);
-    z-index: 100;
-    max-width: 40%;
-    max-height: 40%;
-    overflow: auto;
+  max-width: 100%;
+  height: auto;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
-  
-  
-  .row img.blur {
-    filter: blur(5px);
+.row img.zoom {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2);
+  z-index: 100;
+  max-width: 40%;
+  max-height: 40%;
+  overflow: auto;
+}
+
+
+
+.row img.blur {
+  filter: blur(5px);
 }
 
 button {
-    background-color: transparent;
-    color: white;
-    cursor: pointer;
-    position: fixed;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 200;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    background-color: rgba(91, 91, 90, 0.396);
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  position: fixed;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  background-color: rgba(91, 91, 90, 0.396);
 }
-  
- 
-  button {
-    display: none;
-  }
-  
- 
-  img.zoom + button {
-    display: block;
-  }
-  
- 
-  img.zoom {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    position: relative;
-  }
-  
+
+
+button {
+  display: none;
+}
+
+
+img.zoom + button {
+  display: block;
+}
+
+
+img.zoom {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.btn-primary {
+  background-color: #973609a9;
+  border: none;
+  color: white;
+  z-index: 100;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: #097b97a9;
+  color: white;
+}
