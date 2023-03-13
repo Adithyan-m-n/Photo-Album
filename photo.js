@@ -6,8 +6,6 @@ images.forEach(image => {
   image.addEventListener('click', () => {
     
     image.classList.toggle('zoom');
-    
-    
     images.forEach(otherImage => {
       if (otherImage !== image) {
         otherImage.classList.toggle('blur');
