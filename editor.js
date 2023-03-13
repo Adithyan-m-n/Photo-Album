@@ -342,17 +342,16 @@ function changeResolution() {
   canvas.height = height;
 
   ctx.drawImage(img, 0, 0, width, height);
+  applyFilters();
 }
 
 const resetBtn = document.getElementById('reset-btn');
 resetBtn.addEventListener('click', () => {
-  const canvas = document.getElementById('canvas');
-  const ctx = canvas.getContext('2d');
-  const image = new Image();
   image.onload = function() {
     canvas.width = image.width;
     canvas.height = image.height;
     ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+    applyFilters();
   };
   image.src = img.src;
 });
@@ -379,28 +378,17 @@ const avatarBtn = document.getElementById('avatar-btn');
 
 
 avatarBtn.addEventListener('click', function() {
-  
   const avatar = createAvatar(editedImage, avatarCanvas);
-  
-  
   avatarCanvas.style.display = 'block';
 });
 
 function createAvatar(image, avatarCanvas) {
-  
+
   const ctx = avatarCanvas.getContext('2d');
-  
-  
   ctx.drawImage(image, 0, 0, 100, 100);
-  
-  
   ctx.beginPath();
   ctx.arc(50, 50, 50, 0, Math.PI * 2, false);
   ctx.clip();
-  
-  
   ctx.drawImage(image, 0, 0, 100, 100);
-  
-  
   return avatarCanvas;
 }
