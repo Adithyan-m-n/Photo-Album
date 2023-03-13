@@ -383,7 +383,6 @@ avatarBtn.addEventListener('click', function() {
 });
 
 function createAvatar(image, avatarCanvas) {
-
   const ctx = avatarCanvas.getContext('2d');
   ctx.drawImage(image, 0, 0, 100, 100);
   ctx.beginPath();
@@ -392,3 +391,33 @@ function createAvatar(image, avatarCanvas) {
   ctx.drawImage(image, 0, 0, 100, 100);
   return avatarCanvas;
 }
+
+const downloadBtn = document.getElementById('download-btn');
+downloadBtn.addEventListener('click', () => {
+  const dataURL = canvas.toDataURL('image/png');
+  const downloadLink = document.createElement('a');
+  downloadLink.href = dataURL;
+  downloadLink.download = 'canvas-image.png';
+  downloadLink.click();
+});
+
+const resettuneBtn = document.getElementById('reset-tune');
+resettuneBtn.addEventListener('click', () => {
+  brightnessSlider.value = 0;
+  contrastSlider.value = 0;
+  saturationSlider.value = 0;
+  grayscaleSlider.value = 0;
+  hueSlider.value = 0;
+  invertSlider.value = 0;
+  sepiaSlider.value = 0;
+  blurSlider.value = 0;
+  applyFilters();
+  document.getElementById('brightness-value').innerHTML = 0;
+  document.getElementById('contrast-value').innerHTML = 0;
+  document.getElementById('saturation-value').innerHTML = 0;
+  document.getElementById('grayscale-value').innerHTML = 0;
+  document.getElementById('hue-value').innerHTML = 0;
+  document.getElementById('invert-value').innerHTML = 0;
+  document.getElementById('sepia-value').innerHTML = 0;
+  document.getElementById('blur-value').innerHTML = 0;
+});
