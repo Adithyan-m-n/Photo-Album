@@ -60,6 +60,7 @@ document.querySelector('#show-all-btn').addEventListener('click', () => {
 
 
 function filterImages(color) {
+  showAllImages();
   document.querySelectorAll('.img-fluid').forEach(img => {
     const canvas = document.createElement('canvas');
     canvas.width = img.width;

@@ -413,7 +413,7 @@ downloadBtn.addEventListener('click', () => {
   const dataURL = canvas.toDataURL('image/png');
   const downloadLink = document.createElement('a');
   downloadLink.href = dataURL;
-  downloadLink.download = 'canvas-image.png';
+  downloadLink.download = 'edited-image.png';
   downloadLink.click();
 });
 
